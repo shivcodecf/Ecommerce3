@@ -19,7 +19,7 @@ const Login = () => {
     };
 
     try {
-      const res = await axios.post("https://ecoommerceback.onrender.com/user/login", userInfo);
+      const res = await axios.post("https://ecoombacke.onrender.com/user/login", userInfo);
       if (res.data) {
         toast.success("Login successful");
         setAuthUser(res.data.user);
