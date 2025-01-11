@@ -25,7 +25,7 @@ function Login() {
 
     try {
       const response = await axios.post(
-        'http://localhost:5000/login',
+        'https://ecommerce3-6.onrender.com/login',
         { email, password },
         {
           headers: { 'Content-Type': 'application/json' },
