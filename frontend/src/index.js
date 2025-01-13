@@ -4,9 +4,15 @@ import './index.css';
 import App from './App';
 
 import { Provider } from 'react-redux'
+
+
 import store from './components/redux/store.js'
+import { persistStore } from 'redux-persist'
+import { PersistGate } from 'redux-persist/integration/react'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
+const persistor = persistStore(store);
 
 
 
@@ -15,11 +21,11 @@ root.render(
   <React.StrictMode> 
   <Provider store = {store}>
   
-    
+  <PersistGate loading={null} persistor={persistor}>
     <App />
 
     <ToastContainer/>
-    
+    </PersistGate>
   
   </Provider>
   </React.StrictMode>

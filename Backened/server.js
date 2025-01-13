@@ -10,7 +10,7 @@ const PORT = 5000;
 const SECRET_KEY = 'jdjdjfdfdfjded'; // Replace with a secure secret key
 
 // Middleware
-app.use(cors({ origin: 'https://eccom-fro.vercel.app', credentials: true }));
+app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
 app.use(bodyParser.json());
 
 // Connect to MongoDB
