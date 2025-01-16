@@ -25,7 +25,7 @@ function Login() {
 
     try {
       const response = await axios.post(
-        'https://ecomm-back2.onrender.com/login',
+       'https://ecomm-back2.onrender.com/login',
         { email, password },
         {
           headers: { 'Content-Type': 'application/json' },

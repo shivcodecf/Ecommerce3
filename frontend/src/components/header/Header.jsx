@@ -7,17 +7,31 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { Button } from '@mui/material';
 import { setUser } from '../redux/authSice';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 // import '../../css/Header.css'
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isLoggingOut, setIsLoggingOut] = useState(false); // State to track logout click
   const { user } = useSelector((store) => store.auth);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const logoutHandler =()=>{
-    dispatch(setUser(null));
-    
-  }
+
+  const logoutHandler = () => {
+    setIsLoggingOut(true); // Set logout state to true
+  };
+
+  // useEffect to handle logout logic
+  useEffect(() => {
+    if (isLoggingOut) {
+      dispatch(setUser(null)); // Clear user state
+      console.log("Logged out successfully");
+      navigate('/login'); // Redirect to login page
+      setIsLoggingOut(false); // Reset logout state
+    }
+  }, [isLoggingOut, dispatch, navigate]);
 
   return (
     <header className="bg-white text-black fixed top-0 left-0 w-full z-50 shadow-md h-auto">
@@ -46,7 +60,7 @@ const Navbar = () => {
             <ul className="flex flex-col  md:flex-row gap-4 mt-4 md:mt-0 mr-[50px] ">
             <li><NavLink to="/" className="nav_ text-black-500">HOME</NavLink></li>
             {user ? (
-              <li><NavLink to="/Product" className="nav_">PRODUCTS</NavLink></li>
+              <li><NavLink to="/product" className="nav_">PRODUCTS</NavLink></li>
             ) : (
               <li><NavLink to="/login" className="nav_"></NavLink></li>
             )}
