@@ -46,7 +46,7 @@
   cursor: pointer;
 }
 .sign-up:hover{
-    background-color: #3498db;
+    background-color: #585147;
     color: white;
     transition:1s  ease-in-out;
 }
@@ -379,6 +379,15 @@
           
         
             
+      
+        
+      }
+
+      @media (max-width: 754px) {
+        /* Styles for screens smaller than or equal to 754px */
+        .home-container {
+         margin-top:120px;
+        }
       
         
       }

@@ -113,13 +113,16 @@ const Product = () => {
     <div >
          
        
-         <div className='cart-top'>
+         <div className='cart-top '>
       <FaOpencart
-        className={`main-cart ${isFixed ? 'fixed-cart' : ''}`}
+        className={`main-cart ${isFixed ? 'fixed-cart' : ''}`  }
         onClick={handler}
       />
-      <div className={`main-cart-count ${isFixed ? 'fixed-count' : ''}`}>
-        {itemcount}
+      <div className={`main-cart-count ${isFixed ? 'fixed-count' : ''} pointer` }
+       onClick={handler}
+      >
+        {itemcount} 
+       
       </div> 
       </div>
        

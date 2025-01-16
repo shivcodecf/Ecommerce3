@@ -64,7 +64,7 @@ const Home = () => {
   const {user} = useSelector(store=>store.auth);
   return (
     <>
-    <div className='home-container'>
+    <div className='home-container mt-[50px]'>
     <div className='Home-text-container'>
       <h1 className='logo-name'>SHOP EASY</h1>
       <p className='home-text'>Welcome to <span className='cartify-text'>Shop Easy</span></p>

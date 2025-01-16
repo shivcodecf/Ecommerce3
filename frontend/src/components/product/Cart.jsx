@@ -35,7 +35,7 @@ const Cart = ({cart,setCart,AddItemPrice}) => {
     
     
   return (
-    <div>
+    <div className='cart mt-[100px]'>
         <div className='cart-main-title'></div>
          {
             cart?.map((item)=>(
