@@ -18,7 +18,7 @@ function Signup() {
 
     try {
       const response = await axios.post(
-       'http://localhost:5000/signup',
+       'https://eccom-back4.onrender.com/signup',
         { name, email, password },
         {
           headers: { 'Content-Type': 'application/json' },
